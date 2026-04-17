@@ -44,6 +44,7 @@ test.for(instances.map(i => i.browser))('aria snapshot %s', async (browser) => {
         "expect.element aria once": "passed",
         "expect.element aria retry": "passed",
         "poll aria once": "passed",
+        "toMatchAriaInlineSnapshot empty": "passed",
         "toMatchAriaInlineSnapshot simple": "passed",
         "toMatchAriaSnapshot simple": "passed",
       },
@@ -67,6 +68,8 @@ test.for(instances.map(i => i.browser))('aria snapshot %s', async (browser) => {
         - paragraph: Original
         - button "1234": Pattern
       \`)
+
+    expect(document.body).toMatchAriaInlineSnapshot(\`\`)
 
     expect.poll(async () => {
         document.body.innerHTML = \`<p>poll once</p>\`
@@ -158,6 +161,7 @@ test.for(instances.map(i => i.browser))('aria snapshot %s', async (browser) => {
             "expect.element aria once": "passed",
             "expect.element aria retry": "passed",
             "poll aria once": "passed",
+            "toMatchAriaInlineSnapshot empty": "passed",
             "toMatchAriaInlineSnapshot simple": [
               "Snapshot \`toMatchAriaInlineSnapshot simple 1\` mismatched
         - Expected
@@ -193,6 +197,7 @@ test.for(instances.map(i => i.browser))('aria snapshot %s', async (browser) => {
           "expect.element aria once": "passed",
           "expect.element aria retry": "passed",
           "poll aria once": "passed",
+          "toMatchAriaInlineSnapshot empty": "passed",
           "toMatchAriaInlineSnapshot simple": [
             "Snapshot \`toMatchAriaInlineSnapshot simple 1\` mismatched
       - Expected
@@ -234,6 +239,7 @@ test.for(instances.map(i => i.browser))('aria snapshot %s', async (browser) => {
         "expect.element aria once": "passed",
         "expect.element aria retry": "passed",
         "poll aria once": "passed",
+        "toMatchAriaInlineSnapshot empty": "passed",
         "toMatchAriaInlineSnapshot simple": "passed",
         "toMatchAriaSnapshot simple": "passed",
       },
@@ -257,6 +263,8 @@ test.for(instances.map(i => i.browser))('aria snapshot %s', async (browser) => {
         - paragraph: Changed
         - button /\\\\d+/: Pattern
       \`)
+
+    expect(document.body).toMatchAriaInlineSnapshot(\`- button "Hidden Button"\`)
 
     expect.poll(async () => {
         document.body.innerHTML = \`<p>poll once</p>\`

@@ -27,7 +27,7 @@ test('toMatchAriaInlineSnapshot simple', () => {
 
 test('toMatchAriaInlineSnapshot empty', () => {
   document.body.innerHTML = `
-    <button aria-hidden>Hidden Button</button>
+    <button aria-hidden="true">Hidden Button</button>
   `
   expect(document.body).toMatchAriaInlineSnapshot('')
 })
