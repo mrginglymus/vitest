@@ -25,6 +25,13 @@ test('toMatchAriaInlineSnapshot simple', () => {
   `)
 })
 
+test('toMatchAriaInlineSnapshot empty', () => {
+  document.body.innerHTML = `
+    <button aria-hidden>Hidden Button</button>
+  `
+  expect(document.body).toMatchAriaInlineSnapshot('')
+})
+
 test('poll aria once', async () => {
   await expect.poll(async () => {
     document.body.innerHTML = `<p>poll once</p>`
